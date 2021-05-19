@@ -1,5 +1,6 @@
 package com.company;
 
+import java.lang.reflect.Array;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.Arrays;
@@ -10,24 +11,12 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-        Person Antoine = new Person("Black", 212,true, "Nashville");
-        Person Wu = new Person("Asian", 133, false, "Singapore");
-        Person Chad = new Person("White", 158, false, "Los Angeles");
-        System.out.println(Antoine.married);
+    int [][] X = {{0,0,1}, {0,1,1}, {1,0,1}, {1,1,1}};
+    int [][] y = {{0}, {0}, {1}, {1}};
     }
 
-    static class Person {
-        String race;
-        int weight;
-        boolean married;
-        String city;
-
-        Person(String race, int weight, boolean married, String city){
-            this.race = race;
-            this.weight = weight;
-            this.married = married;
-            this.city = city;
-        };
+    public static float sigmoid(int [] [] X){
+        return 1/(1+Math.exp(X));
     }
 }
 
