@@ -5,29 +5,29 @@ import java.util.*;
 public class Main {
 
     public static void main(String[] args) {
-    int [][] X = {{0,0,1}, {0,1,1}, {1,0,1}, {1,1,1}};
-    int [][] y = {{0}, {0}, {1}, {1}};
-    List<List<Float>> syn0 = generateWeights(4, 3, 2, 1);
-    List<List<Float>> syn1 = generateWeights(4, 1, 2, 1);
-    //for (int i = 0; i < 60000; i++){ int [][] l0 = X; }
-        System.out.println(sigmoid((float) 0.78, false));
+    double[] workHours = {4, 4, 8, 8, 8.5, 9, 10, 10, 12, 12, 13, 10, 14, 8, 9, 8, 6, 9};
+    double [] socialHours = {0, 9, 5, 6, 4, 4, 2, 1, 0, 1, 3, 4, 0, 5, 3.5, 5, 5.5, 3};
+        //System.out.println(error(workHours, socialHours));
+        System.out.println(workHours[17]);
+        System.out.println(socialHours[17]);
     }
 
-    public static float sigmoid(float X, boolean deriv){
-        if (deriv == true){
-            return X * (1-X);
+    public static double predict(double X){
+        return (X * -1) + 13;
+    }
+
+    public static double error(double[] X, double[]y){
+        double Error = 0;
+        for (int i = 0; i < X.length; i++){
+            double yHat = predict(X[i]);
+            double delta = (yHat - y[i])*(yHat - y[i]);
+            Error += delta;
+            ;
         }
-        return (float) (1/(1+Math.exp(-1*X)));
+        return Error/ X.length;
     }
-    public static List<List<Float>> generateWeights(int col, int row, int factor, int bias) {
-        List<List<Float>> dataset = new ArrayList<>();
-        for (int i = 0; i < row; i++){
-        List<Float> column = new ArrayList<Float>();
-        for (int j = 0; j < col; j++){
-            column.add((float) (Math.random()*factor)-bias);
-        }dataset.add(column);}
-        return dataset;
-    }
+
+
 }
 
 
