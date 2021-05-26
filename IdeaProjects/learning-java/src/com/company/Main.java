@@ -3,13 +3,7 @@ package com.company;
 import java.util.*;
 public class Main {
     public static void main(String[] args){
-        Array numbers = new Array(3);
-        numbers.insert(60);
-        numbers.insert(120);
-        numbers.insert(180);
-        numbers.insert(240);
-        System.out.println(numbers.indexOf(600));
-        numbers.print();
+
     }
 }
 
