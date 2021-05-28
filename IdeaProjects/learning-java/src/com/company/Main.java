@@ -1,18 +1,18 @@
 package com.company;
 
 import java.util.*;
+import java.util.LinkedList;
+
 public class Main {
     public static void main(String[] args){
-        ArrayList<Integer> heights = new ArrayList<Integer>();
-        heights.add(73);
-        heights.add(66);
-        heights.add(69);
-        heights.add(67);
-        heights.add(69);
-        heights.add(70);
-        heights.add(74);
-        heights.add(70);
-        System.out.println(heights.get(3));
+        //ArrayLists are more 'interactive' while Arrays use less memory
+        //Stacks are more computationally expensive and rarely used in the frontend, LIFO principle
+        //The Que uses FIFO principle so it's basically a stack in reverse
+        //We can use LinkedLists to make Stacks, Ques, etc it is a backer
+        LinkedList<Integer> salaries = new LinkedList<Integer>();
+        salaries.add(35);
+        salaries.add(120);
+        salaries.add(85);
     }
 }
 
